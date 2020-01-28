@@ -61,7 +61,7 @@ function makePersonObject(id, name, email) {
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(object) {
-  return "Hello, my name is {object.name}"
+  return `Hello, my name is ${object.name}`;
 }
 
 /**
@@ -79,14 +79,16 @@ function getName(object) {
 */
 function makeSmartPerson(name) {
   return{
-    name: "Sami",
-    sum: function(num1, num2),
-    {return num1+ num2;},
-    speak: function()
-    {return "Hello, my name is {Sami};"}
-  };
+    name: name,
+    sum: function(num1, num2){
+      return num1+ num2;
+    },
+    speak: function(){
+      return `Hello, my name is ${name}`;
+    
+    }
+  }
 }
-
 
 
 
@@ -146,10 +148,8 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  const getCarInfoByIndex = inventory.find((item, index) => {
-    return index === index;
-  });
-  return `The car is a ${getCarInfoByIndex.car_make} ${getCarInfoByIndex.car_model}`
+  const car = inventory[index];
+  return `The car is a ${car.car_make} ${car.car_model}`
 }
 
 /**
